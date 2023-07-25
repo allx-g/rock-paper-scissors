@@ -35,10 +35,10 @@ function playRound(playerSelection, computerSelection) {
         return "tie";
     }
     // Player wins
-    else if (checkIfPlayerWins()) {
+    else if (playerWins()) {
         return "player";
     }
-    else if (checkIfComputerWins()) {
+    else if (computerWins()) {
         return "computer";
     }
     else {
@@ -60,17 +60,11 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     // Track player and computer scores
-    let playerScore = 0;
-    let computerScore = 0;
     // Loop 5 times
-    for (let i = 0; i < 5; i++) {
         // Prompt the player to make a choice
-        playerChoice = prompt("Make your move: rock, paper, or scissors?");
         // Generate a random choice for the computer
         // Play round
         // Whoever wins, increment their score by one
         // Show a message telling the player who won the round
-    }
-    // Show final scores and determine a winner
-        
+    // Show final scores and determine a winner       
 }
