@@ -32,30 +32,45 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerSelection.toLowerCase();
     
     if (playerSelection == computerSelection) {
-        return "It's a tie!";
+        return "tie";
     }
     // Player wins
     else if (checkIfPlayerWins()) {
-        return `You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`;
+        return "player";
     }
     else if (checkIfComputerWins()) {
-        return `You lose. ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`;
+        return "computer";
     }
     else {
         return "Invalid round";
     }
 
-    function checkIfPlayerWins() {
+    function playerWins() {
         return (playerSelection == "rock" && computerSelection == "scissors") ||
             (playerSelection == "paper" && computerSelection == "rock") ||
             (playerSelection == "scissors" && computerSelection == "paper");
     }
 
-    function checkIfComputerWins() {
+    function computerWins() {
         return (playerSelection == "rock" && computerSelection == "paper") ||
             (playerSelection == "paper" && computerSelection == "scissors") ||
             (playerSelection == "scissors" && computerSelection == "rock");
     }
 }
 
-console.log(playRound("paper", "scissors"));
+function game() {
+    // Track player and computer scores
+    let playerScore = 0;
+    let computerScore = 0;
+    // Loop 5 times
+    for (let i = 0; i < 5; i++) {
+        // Prompt the player to make a choice
+        playerChoice = prompt("Make your move: rock, paper, or scissors?");
+        // Generate a random choice for the computer
+        // Play round
+        // Whoever wins, increment their score by one
+        // Show a message telling the player who won the round
+    }
+    // Show final scores and determine a winner
+        
+}
