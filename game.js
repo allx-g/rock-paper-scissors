@@ -39,11 +39,11 @@ function playRound(playerSelection, computerSelection) {
     // Player wins
     else if (playerWins()) {
         winner = "player";
-        console.log(`You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`)
+        console.log(`Your ${capitalize(playerSelection)} beat the computer's ${capitalize(computerSelection)}`)
     }
     else if (computerWins()) {
         winner = "computer";
-        console.log(`You lose! ${capitalize(playerSelection)} loses to ${capitalize(computerSelection)}`)
+        console.log(`Your ${capitalize(playerSelection)} lost to the computer's ${capitalize(computerSelection)}`)
     }
     else {
         winner = "invalid"
@@ -71,13 +71,14 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Make your move: Rock, Paper, or Scissors?");
+    for (let round = 1; round <= 5; round++) {
+        let playerSelection = prompt(`Round ${round}:` + 
+        "\nMake your move: Rock, Paper, or Scissors?");
         let computerSelection = getComputerChoice();
         let winner = playRound(playerSelection, computerSelection);
 
         updateWinnerScore(winner);
-        console.log(`The winner of that round was ${capitalize(winner)}`);
+        console.log(`-- Winner of Round ${round}: ${capitalize(winner)}`);
     }
     
     function updateWinnerScore(winner) {
