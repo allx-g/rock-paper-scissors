@@ -34,16 +34,20 @@ function playRound(playerSelection, computerSelection) {
     
     if (playerSelection == computerSelection) {
         winner = "none";
+        console.log("It's a tie! Each player gets a point.")
     }
     // Player wins
     else if (playerWins()) {
         winner = "player";
+        console.log(`You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`)
     }
     else if (computerWins()) {
         winner = "computer";
+        console.log(`You lose! ${capitalize(playerSelection)} loses to ${capitalize(computerSelection)}`)
     }
     else {
         winner = "invalid"
+        console.log("This round is invalid.")
     }
 
     return winner;
@@ -61,30 +65,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+
 function game() {
-    // Track player and computer scores
     let playerScore = 0;
     let computerScore = 0;
-    // Loop 5 times
+
     for (let i = 0; i < 5; i++) {
-        // Prompt the player to make a choice
         let playerSelection = prompt("Make your move: Rock, Paper, or Scissors?");
-        // Generate a random choice for the computer
         let computerSelection = getComputerChoice();
-        // Play round
         let winner = playRound(playerSelection, computerSelection);
-        // Whoever wins, increment their score by one
+
         updateWinnerScore(winner);
-        // Show a message telling the player who won the round
+        console.log(`The winner of that round was ${capitalize(winner)}`);
     }
-    // Show final scores and determine a winner
     
     function updateWinnerScore(winner) {
         switch (winner) {
             case "player":
                 playerScore++;
+                break;
             case "computer":
                 computerScore++;
+                break;
+            case "none":
+                playerScore++;
+                computerScore++;
+                break;
         }
     }
 }
+
+game();
