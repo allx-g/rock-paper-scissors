@@ -71,16 +71,44 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let round = 1; round <= 5; round++) {
-        let playerSelection = prompt(`Round ${round}:` + 
-        "\nMake your move: Rock, Paper, or Scissors?");
-        let computerSelection = getComputerChoice();
-        let winner = playRound(playerSelection, computerSelection);
+    playFiveRounds();
 
-        updateWinnerScore(winner);
-        console.log(`-- Winner of Round ${round}: ${capitalize(winner)}`);
+    let overallWinner = getOverallWinner();
+    showScore();
+    console.log(`${overallWinner} wins the game!`);
+
+
+    function getOverallWinner(playerScore, computerScore) {
+        if (playerScore === computerScore) {
+            return "No one"
+        }
+        else {
+            return (playerScore > computerScore) ? playerScore : computerScore;
+        }
+    }
+
+    function showScore() {
+        console.log(
+            `Final score:
+Player: ${playerScore}
+Computer: ${computerScore}`       
+        );
+    }
+
+    function playFiveRounds() {
+        for (let round = 1; round <= 5; round++) {
+            let playerSelection = prompt(`Round ${round}:` +
+                "\nMake your move: Rock, Paper, or Scissors?");
+            let computerSelection = getComputerChoice();
+            let roundWinner = playRound(playerSelection, computerSelection);
+
+            updateWinnerScore(roundWinner);
+            console.log(`-- Winner of Round ${round}: ${capitalize(roundWinner)}`);
+        }
+
     }
     
+
     function updateWinnerScore(winner) {
         switch (winner) {
             case "player":
