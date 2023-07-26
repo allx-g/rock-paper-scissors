@@ -68,22 +68,22 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
+    let playerScore = 2;
+    let computerScore = 3;
 
-    playFiveRounds();
+    // playFiveRounds();
 
-    let overallWinner = getOverallWinner();
+    let overallWinner = getOverallWinner(playerScore, computerScore);
     showScore();
-    console.log(`${overallWinner} wins the game!`);
+    console.log(`${capitalize(overallWinner)} the game!`);
 
 
     function getOverallWinner(playerScore, computerScore) {
         if (playerScore === computerScore) {
-            return "No one"
+            return "No one wins"
         }
         else {
-            return (playerScore > computerScore) ? playerScore : computerScore;
+            return (playerScore > computerScore) ? "You win" : "Computer wins";
         }
     }
 
