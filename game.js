@@ -34,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
     
     if (playerSelection == computerSelection) {
         winner = "none";
-        console.log("It's a tie! Each player gets a point.")
+        console.log(`${capitalize(playerSelection)} and ${capitalize(computerSelection)}: it's a tie! Each player gets a point.`);
     }
     // Player wins
     else if (playerWins()) {
@@ -122,5 +122,16 @@ Computer: ${computerScore}`
         }
     }
 }
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.id;
+        let computerSelection = getComputerChoice();
+
+        let winner = playRound(playerSelection, computerSelection);
+    })
+});
 
 game();
