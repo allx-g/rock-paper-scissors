@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="wrapper">
-        <h1>RPS</h1>
-        <p>The classic game of Rock Paper Scissors available at your fingertips.</p>
-        <div class="display">
-            <p id="display-text"></p>
+    <div class="gamebox">
+        <div class="display-wrapper">
+            <div class="display">
+                <p id="display-text"></p>
+            </div>
         </div>
+        <p class="logo">ALEX <span class="gamebox-name">GAME BOX</span><span id="TM">TM</span></p>
+        
         <div class="controller">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <div class="button-wrapper">
+                <button id="rock"></button>
+                <p>R</p>
+            </div>
+            <div class="button-wrapper">
+                <button id="paper"></button>
+                <p>P</p>
+            </div>
+            <div class="button-wrapper">
+                <button id="scissors"></button>
+                <p>S</p>
+            </div>
         </div>
     </div>
     <script src="game.js"></script>
