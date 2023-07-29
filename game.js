@@ -68,10 +68,8 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    let playerScore = 2;
-    let computerScore = 3;
-
-    // playFiveRounds();
+    let playerScore = 0;
+    let computerScore = 0;
 
     let overallWinner = getOverallWinner(playerScore, computerScore);
     showScore();
