@@ -39,6 +39,12 @@ body {
     height: 150px;
     padding: 10px;
     box-shadow: 2px 2px 10px #071f07 inset;
+    font-size: 14px;
+}
+
+#game-title {
+    margin: 0;
+    font-style: italic;
 }
 
 #display-text {
