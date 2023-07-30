@@ -1,7 +1,7 @@
 Rock Paper Scissors
 ========
 
-Rock Paper Scissors is the classic 2-player game played with hands but recreated virtually on a GameBoy:tm:-esque display played against the computer.
+Rock Paper Scissors is the classic 2-player game played with hands but recreated virtually on a GameBoy:tm:-esque display.
 
 This is also a project submission for The Odin Project.
 
@@ -10,6 +10,7 @@ This is also a project submission for The Odin Project.
 Rules
 --------
 
+- The players are you and the computer.
 - The game is "best of 5". Once a player reaches 3, the game wins and that player wins the whole game.
 
 Where can I play this?
