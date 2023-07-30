@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
 </head>
 <body>
     <div class="gamebox">
         <div class="display-wrapper">
             <div class="display">
-                <p id="game-title">Rock Paper Scissors<br>====================</p>
-                <p id="display-text"></p>
+                <div id="top-text">
+                    <p id="game-title">Rock Paper Scissors<br>====================</p>
+                    <p id="main-text">Make your move with the controller buttons
+                    </p>
+                    <p id="message"></p>
+                    <p id="game-over"></p>
+                </div>
+                <div id="score-counter">
+                    <p id="player-score">You: 0</p>
+                    <p id="computer-score">Computer: 0</p>
+                </div>
             </div>
         </div>
         <p class="logo">ALEX <span class="gamebox-name">GAME BOX</span><span id="TM">TM</span></p>
@@ -31,6 +41,9 @@
             </div>
         </div>
     </div>
-    <script src="game.js"></script>
+    <div class="rules">
+        <p>To reset the game, refresh the page.</p>
+        <p>Game made by Alexander Guel</p>
+    </div>
 </body>
 </html>
