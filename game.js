@@ -102,14 +102,20 @@ function getMoves(e) {
     computerSelection = getComputerChoice();
 }
 
+function checkForGameOver() {
+    return playerWins === 3 || computerWins === 3;
+}
+
 function manageGame(e) {
-    if (totalScore < 5) {
+    isGameOver = checkForGameOver();
+
+    if (!isGameOver) {
         console.log(e.target);
         getMoves(e);
         playRound(playerSelection, computerSelection);
         updateScoreDisplay();
 
-        if (totalScore === 5) {
+        if (checkForGameOver()) {
             winner = getOverallWinner(playerWins, computerWins);
             updateScoreDisplay();
             gameOverText.textContent = "GAME OVER"
